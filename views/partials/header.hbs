@@ -1,0 +1,72 @@
+<header class="navbar">
+
+  <!-- LEFT: Logo -->
+  <div class="nav-left">
+    <img src="/images/logo.png" alt="PlaySpot Logo" class="nav-logo">
+    <h2 class="logo-text">PlaySpot</h2>
+  </div>
+
+  <!-- CENTER: Desktop Navigation (filled by JS) -->
+  <nav id="navbar" class="nav-links"></nav>
+
+  <!-- MOBILE HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+
+  <!-- RIGHT: Dark mode toggle -->
+  <button id="darkModeToggle">🌙</button>
+
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('navbar');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburger = document.getElementById('hamburger');
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    
+    let html = `
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/browse">Browse Venues</a>
+    `;
+
+    if (user) {
+      html += `<a href="/dashboard">Dashboard</a>`;
+      if (user.role === 'admin') {
+        html += `<a href="/admin/dashboard">Admin Panel</a>`;
+      }
+      html += `<a href="#" id="logoutBtn">Logout</a>`;
+    } else {
+      html += `<a href="/login">Login</a>`;
+      html += `<a href="/signup">Signup</a>`;
+    }
+
+    // Put html into desktop + mobile menu
+    navbar.innerHTML = html;
+    mobileMenu.innerHTML = html;
+
+    // Logout logic
+    if (document.getElementById('logoutBtn')) {
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        window.location.href = '/';
+      });
+    }
+
+    // Hamburger toggle logic
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('show-menu');
+    });
+
+
+  });
+</script>

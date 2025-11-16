@@ -1,0 +1,163 @@
+<div class="venue-details-container">
+
+  <!-- Hidden ID (Required for JS) -->
+  <input type="hidden" id="venueId" value="{{venue._id}}">
+
+  <!-- VENUE TITLE -->
+  <h1 class="venue-title">{{venue.name}}</h1>
+
+  <!-- IMAGE GALLERY -->
+  <div class="venue-gallery">
+    {{#if venue.images.length}}
+      {{#each venue.images}}
+        <img src="{{this}}" alt="Venue Image">
+      {{/each}}
+    {{else}}
+      <img src="/images/placeholder.jpg" alt="No Image Available">
+    {{/if}}
+  </div>
+
+  <!-- VENUE INFO -->
+  <div class="venue-info-card">
+    <h2>About This Venue</h2>
+
+    <p><strong>Sport:</strong> {{venue.sport}}</p>
+    <p><strong>Location:</strong> {{venue.location}}</p>
+    <p><strong>Price:</strong> ₹{{venue.price}}</p>
+
+    <p class="venue-description">{{venue.description}}</p>
+  </div>
+
+  <!-- FACILITIES -->
+  <div class="venue-section">
+    <h2>Facilities Available</h2>
+
+    <div class="facility-grid">
+      <div class="facility-card">
+        <span>💡</span>
+        <p>Flood Lights for Evening Play</p>
+      </div>
+
+      <div class="facility-card">
+        <span>🚿</span>
+        <p>Clean Washrooms & Changing Rooms</p>
+      </div>
+
+      <div class="facility-card">
+        <span>🅿️</span>
+        <p>Free & Safe Parking Area</p>
+      </div>
+
+      <div class="facility-card">
+        <span>💧</span>
+        <p>Drinking Water Available</p>
+      </div>
+
+      <div class="facility-card">
+        <span>👥</span>
+        <p>Seating Area for Spectators</p>
+      </div>
+
+      <div class="facility-card">
+        <span>⛑️</span>
+        <p>First Aid Kit Available</p>
+      </div>
+
+      <div class="facility-card">
+        <span>🧹</span>
+        <p>Sanitized Turf (Daily Cleaning)</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- RULES -->
+  <div class="venue-section">
+    <h2>Rules & Regulations</h2>
+
+    <div class="rules-card">
+      <ul>
+        <li>⏱️ Please arrive at least <strong>10 minutes</strong> before your slot.</li>
+        <li>👟 Avoid metal-studded shoes on the turf.</li>
+        <li>🚫 Food & beverages are not allowed inside the playing area.</li>
+        <li>⚠️ Any damage to property will be chargeable.</li>
+        <li>🧑‍🤝‍🧑 Follow staff instructions at all times.</li>
+      </ul>
+    </div>
+  </div><br><br>
+
+
+  <!-- MAP -->
+  <div class="venue-map">
+    {{#if venue.mapEmbedUrl}}
+      <iframe src="{{venue.mapEmbedUrl}}" allowfullscreen loading="lazy"></iframe>
+    {{else}}
+      <p>Map not available</p>
+    {{/if}}
+  </div>
+
+  <!-- BOOKING CARD -->
+  <div class="booking-card">
+    <h2>Book a Slot</h2>
+
+    <form id="bookForm">
+      <label for="bookingDate">Select Date</label>
+      <input type="date" id="bookingDate" name="date" required min="{{today}}">
+
+      <h3>Select Slot</h3>
+      <div id="slotsList">
+        {{#each venue.slots}}
+          {{#if this.available}}
+            <label class="slot-option">
+              <input type="radio" name="slot" required value="{{this.time}}">
+              <span>{{this.time}}</span>
+            </label>
+          {{/if}}
+        {{/each}}
+      </div>
+
+      <button type="submit" class="btn-primary">Book Now</button>
+    </form>
+  </div>
+
+  <!-- CUSTOMER REVIEWS (STATIC PLACEHOLDER) -->
+  <div class="venue-section">
+    <h2>Customer Reviews</h2>
+    <div class="review-card">
+      <p>"Amazing turf! Very clean & great lighting system."</p>
+      <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+    </div>
+
+    <div class="review-card">
+      <p>"Affordable price & well-maintained ground."</p>
+      <span>⭐ ⭐ ⭐ ⭐</span>
+    </div>
+
+    <div class="review-card">
+      <p>"Parking space + drinking water — Very convenient!"</p>
+      <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+    </div>
+  </div>
+
+  <!-- FAQs -->
+  <div class="venue-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <h3>Do I need to bring my own equipment?</h3>
+      <p>Equipment rental is available on-spot.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Can I cancel or reschedule my booking?</h3>
+      <p>Yes, cancellations can be done through your dashboard.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Are washrooms available?</h3>
+      <p>Yes, clean washrooms & changing rooms are available.</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="/js/venue.js"></script>

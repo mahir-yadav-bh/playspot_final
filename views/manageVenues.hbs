@@ -1,0 +1,49 @@
+<div class="container">
+  
+  <h1 class="page-title">Manage Venues</h1>
+  <p class="page-subtitle">View, edit, and delete all venues listed on PlaySpot.</p>
+
+  <!-- Venue Grid -->
+  <div id="venueList" class="venue-grid"></div>
+
+</div>
+
+<!-- Edit Venue Modal -->
+<div id="editModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Edit Venue</h2>
+
+    <form id="editVenueForm">
+      <input id="editId" type="hidden">
+
+      <label>Name</label>
+      <input id="editName" required>
+
+      <label>Sport</label>
+      <input id="editSport" required>
+
+      <label>Location</label>
+      <input id="editLocation" required>
+
+      <label>Price (₹)</label>
+      <input id="editPrice" type="number" required>
+
+      <label>Slots (comma separated)</label>
+      <input id="editSlots" placeholder="6am-7am, 7am-8am">
+
+      <label>Images (comma separated URLs)</label>
+      <input id="editImages" placeholder="http://... , http://...">
+
+      <label>Google Maps Embed URL</label>
+      <input id="editMap" placeholder="https://www.google.com/maps/embed?...">
+
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="button" class="btn btn-danger" onclick="closeModal()">Cancel</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<script src="/js/manageVenues.js"></script>

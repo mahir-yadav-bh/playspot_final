@@ -1,0 +1,39 @@
+<div class="container">
+
+  <h1 class="page-title">Add New Venue</h1>
+  <p class="page-subtitle">Fill the details below to create a new venue listing on PlaySpot.</p>
+
+  <div class="card admin-form-card">
+    <form id="addVenueForm">
+
+      <label>Venue Name</label>
+      <input name="name" placeholder="Enter venue name" required>
+
+      <label>Sport</label>
+      <input name="sport" placeholder="e.g., Cricket, Football, Tennis" required>
+
+      <label>Location</label>
+      <input name="location" placeholder="Enter venue address" required>
+
+      <label>Description</label>
+      <textarea name="description" rows="4" placeholder="Describe venue facilities, size, rules etc."></textarea>
+
+      <label>Price (₹)</label>
+      <input name="price" type="number" placeholder="Price per slot" required>
+
+      <label>Image URLs</label>
+      <input name="images" placeholder="Comma-separated URLs">
+
+      <label>Slots</label>
+      <input name="slots" placeholder="e.g. 6am-7am, 7am-8am">
+
+      <label>Google Maps Embed URL</label>
+      <input name="mapEmbedUrl" placeholder="Paste embed map link">
+
+      <button type="submit" class="btn btn-primary">Add Venue</button>
+    </form>
+  </div>
+
+</div>
+
+<script src="/js/admin.js"></script>

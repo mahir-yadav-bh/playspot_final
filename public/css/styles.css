@@ -1,0 +1,1612 @@
+/* ------------------------------------
+   COLOR VARIABLES
+------------------------------------ */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111;
+  --primary-color: #0066ff;
+  --primary-dark: #0044aa;
+  --secondary-color: #f2f4f7;
+  --card-color: #ffffff;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+.dark-mode {
+  --bg-color: #1f1f1f;
+  --text-color: #e6e6e6;
+  --secondary-color: #2a2a2a;
+  --card-color: #2d2d2d;
+  --border-color: #3a3a3a;
+  --shadow-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ------------------------------------
+   GLOBAL RESETS
+------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* ------------------------------------
+   CONTAINER
+------------------------------------ */
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+/* ------------------------------------
+   BUTTONS
+------------------------------------ */
+.btn, .btn-primary {
+  display: inline-block;
+  padding: 12px 22px;
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn:hover, .btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ------------------------------------
+   HERO SECTION
+------------------------------------ */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.hero-img img {
+  width: 800px;
+  height: auto;
+  box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+/* ------------------------------------
+   SECTIONS HEADINGS
+------------------------------------ */
+section {
+  margin: 4rem 0;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------------
+   GRID LAYOUTS
+------------------------------------ */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.3rem;
+}
+
+/* ------------------------------------
+   CARDS
+------------------------------------ */
+.card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+/* ------------------------------------
+   ABOUT SECTION
+------------------------------------ */
+.about-section p {
+  font-size: 1.15rem;
+  margin-bottom: 1.1rem;
+  opacity: 0.85;
+}
+
+.wide-img {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+/* ------------------------------------
+   HOW IT WORKS (STEP CARDS)
+------------------------------------ */
+.step-card {
+  text-align: center;
+  background: var(--card-color);
+  padding: 2rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.step-card span {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 18px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* ------------------------------------
+   VENUE CARDS
+------------------------------------ */
+.venue-card {
+  background: var(--card-color);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  text-align: center;
+}
+
+.venue-card img {
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* ------------------------------------
+   CATEGORIES
+------------------------------------ */
+.category-box {
+  text-align: center;
+  background: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.category-box img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 0.7rem;
+  border-radius: 10px;
+}
+
+.category-box span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ------------------------------------
+   PRICING SECTION
+------------------------------------ */
+.pricing-card {
+  padding: 2rem;
+  border-radius: 14px;
+  text-align: center;
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--primary-color);
+  transform: scale(1.03);
+}
+
+/* ------------------------------------
+   FAQ SECTION
+------------------------------------ */
+.faq {
+  background: var(--secondary-color);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.faq h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ------------------------------------
+   CTA SECTION
+------------------------------------ */
+.cta {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: var(--primary-color);
+  border-radius: 16px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cta .btn-primary {
+  margin-top: 1rem;
+  background: #fff;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* ------------------------------------
+   FOOTER
+------------------------------------ */
+footer {
+  margin-top: 5rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--secondary-color);
+}
+
+/* ------------------------------------
+   RESPONSIVE FIXES
+------------------------------------ */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-img img {
+    width: 80%;
+  }
+}
+/* ------------------------------------
+   NAVBAR + HAMBURGER (FINAL STABLE VERSION)
+------------------------------------ */
+
+.navbar {
+  width: 100%;
+  background: var(--card-color);
+  padding: 1rem 1.5rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  border-bottom: 1px solid var(--border-color);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* Logo */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-logo {
+  height: 45px;
+  width: 45px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Desktop Links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+.nav-links a:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Dark mode link fix */
+.dark-mode .nav-links a:hover {
+  background: #333;
+}
+
+/* Dark Mode Button */
+#darkModeToggle {
+  background: none;
+  border: 2px solid var(--border-color);
+  padding: 6px 12px;
+  color: var(--text-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#darkModeToggle:hover {
+  background: var(--secondary-color);
+}
+
+/* ------------------------------------
+   HAMBURGER MENU
+------------------------------------ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Rotate animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Dropdown Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--card-color);
+  border-bottom: 1px solid var(--border-color);
+}
+.mobile-menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Show mobile items */
+.show-menu {
+  display: flex;
+}
+
+/* Hide desktop links on mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+/* Contact Form */
+.contact-form {
+  background: var(--card-color);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px var(--shadow-color);
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* Map container fix */
+.map-container {
+  margin-top: 1rem;
+}
+
+/* Contact form label */
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* ------------------------------
+   BROWSE PAGE HERO SECTION
+------------------------------ */
+.browse-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: var(--secondary-color);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.browse-hero h1 {
+  font-size: 2.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.browse-hero p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* ------------------------------
+   CATEGORIES SECTION
+------------------------------ */
+.categories-section {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.category-card {
+  background: var(--card-color);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.category-card img {
+  height: 140px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.category-card span {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   VENUES GRID
+------------------------------ */
+.venues-grid {
+  margin-top: 2rem;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.venues-grid .card,
+#venues .card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: 0.3s ease;
+}
+
+#venues .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+#venues .card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+#venues .card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* -------------------------------------------------------
+   PREMIUM VENUE CARD DESIGN (No JS changes required)
+--------------------------------------------------------- */
+
+#venues .card {
+  background: var(--card-color);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 20px var(--shadow-color);
+  padding: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+#venues .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px var(--shadow-color);
+}
+
+/* Venue Image */
+#venues .card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+
+/* Venue Content Box */
+#venues .card-content {
+  padding: 1.2rem;
+}
+
+/* Venue Title */
+#venues .card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+/* Venue Details (location + sport) */
+#venues .venue-tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0.7rem;
+}
+
+#venues .tag {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+/* Price label */
+#venues .price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* CTA Button */
+#venues .card a {
+  display: inline-block;
+  width: 100%;
+  background: var(--primary-color);
+  color: white !important;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: background 0.3s;
+}
+
+#venues .card a:hover {
+  background: var(--primary-dark);
+}
+
+/* Rating (UI only, static placeholder) */
+#venues .rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 0.8rem;
+  color: gold;
+  font-size: 0.9rem;
+}
+
+/* ------------------------------
+   NEW BROWSE VENUE CARD STYLING
+------------------------------ */
+
+#venues {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card.venue-card {
+  background: var(--card-color);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 20px var(--shadow-color);
+  transition: 0.25s ease;
+}
+
+.card.venue-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px var(--shadow-color);
+}
+
+/* Venue Image */
+.venue-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+
+/* Card Content */
+.card-content {
+  padding: 1.1rem;
+}
+
+/* Title */
+.card-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* Tags (sport + location) */
+.venue-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 0.7rem;
+}
+
+.tag {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+/* Rating */
+.rating {
+  color: gold;
+  margin-bottom: 0.9rem;
+  font-weight: 600;
+}
+
+/* Price */
+.price {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* CTA Button */
+.view-btn {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--primary-color);
+  color: white !important;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.view-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* ------------------------------
+     AUTH PAGE DESIGN
+------------------------------ */
+
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  padding: 2rem;
+}
+
+.auth-card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.auth-card h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtext {
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--secondary-color);
+  color: var(--text-color);
+  transition: 0.2s;
+}
+
+.auth-card input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+}
+
+.auth-switch {
+  margin-top: 1.5rem;
+}
+
+.auth-switch a {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Venue Details Page */
+.venue-details-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.venue-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.venue-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.venue-gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.venue-info-card, .booking-card {
+  background: var(--card-color);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 20px var(--shadow-color);
+  margin-bottom: 2.5rem;
+}
+
+.facility-list, .rules-list {
+  padding-left: 1rem;
+  line-height: 1.8;
+}
+
+.review-card {
+  background: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.faq {
+  background: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.slot-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.venue-map iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 14px;
+  border: none;
+  margin-bottom: 2rem;
+}
+
+/* FACILITIES GRID */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.facility-card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 1.2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 14px var(--shadow-color);
+  transition: transform 0.2s;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+}
+
+.facility-card span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.facility-card p {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* RULES CARD */
+.rules-card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px var(--shadow-color);
+  margin-top: 1rem;
+}
+
+.rules-card ul {
+  list-style: none;
+  line-height: 2rem;
+  padding-left: 0;
+}
+
+.rules-card li {
+  font-size: 1.1rem;
+  padding: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.9;
+}
+
+.rules-card li strong {
+  color: var(--primary-color);
+}
+
+/* DASHBOARD WRAPPER */
+.dashboard-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.dashboard-title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* DASHBOARD CARD BASE */
+.dashboard-card {
+  background: var(--card-color);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 20px var(--shadow-color);
+  animation: fadeIn 0.4s ease;
+}
+
+/* PROFILE CARD */
+.profile-info p {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.profile-form button {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+/* BOOKINGS CARD */
+.bookings-list .booking-card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 1.3rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  transition: transform 0.2s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+}
+
+.booking-card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.booking-card button {
+  margin-right: 10px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.cancel-btn {
+  background: #d9534f;
+  color: white;
+}
+
+.edit-btn {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Smooth Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------- Modal (Edit Booking) -------------- */
+#editBookingModal { display: none; } /* container default hidden */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  z-index: 20000; /* high so overlay sits above footer and everything */
+  padding: 1rem;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 560px;
+  background: var(--card-color);
+  color: var(--text-color);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+/* modal inputs & selects */
+.modal-content input[type="date"],
+.modal-content select {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* modal buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.modal-buttons button {
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.modal-buttons #saveEditBtn {
+  background: var(--primary-color);
+  color: #fff;
+}
+.modal-buttons #closeEditBtn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+/* -------------- Toast message styling (ensure above everything) -------------- */
+.message {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  z-index: 30000; /* make sure toast is above modal */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.message.success { background: #28a745; }
+.message.error   { background: #dc3545; }
+.message.info    { background: #007bff; }
+
+/* FORCE TOAST ABOVE NAVBAR */
+.message {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 999999 !important; /* highest layer */
+  pointer-events: auto !important;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.admin-info-card {
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.admin-card {
+  cursor: pointer;
+  text-align: center;
+  padding: 2rem 1.4rem;
+  transition: transform 0.25s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-6px);
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.3rem;
+  background: var(--card-color);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.stat-card h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--primary-color);
+}
+
+/* -------------------------
+   ADMIN ADD VENUE FORM
+-------------------------- */
+
+.admin-form-card {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+}
+
+#addVenueForm label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+#addVenueForm input,
+#addVenueForm textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1.3rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--card-color);
+  color: var(--text-color);
+}
+
+#addVenueForm input::placeholder,
+#addVenueForm textarea::placeholder {
+  opacity: 0.6;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.75;
+  margin-bottom: 2.2rem;
+}
+
+/* -----------------------------
+   VENUE GRID (Admin Panel)
+------------------------------ */
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.7rem;
+  margin-top: 2rem;
+}
+
+.admin-venue-card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 1.4rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: transform .2s;
+}
+
+.admin-venue-card:hover {
+  transform: translateY(-5px);
+}
+
+.admin-venue-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: .4rem;
+}
+
+.admin-venue-card p {
+  opacity: .85;
+  margin-bottom: .3rem;
+}
+
+.admin-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.btn-edit {
+  padding: .5rem .9rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-delete {
+  padding: .5rem .9rem;
+  background: #d62828;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-edit:hover {
+  background: var(--primary-dark);
+}
+
+.btn-delete:hover {
+  background: #b71c1c;
+}
+
+/* -----------------------------
+   MODAL STYLING
+------------------------------ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000; /* above navbar */
+  overflow-y: auto; /* allow scroll */
+  padding: 40px 0;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: var(--card-color);
+  color: var(--text-color);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 8px 30px var(--shadow-color);
+  animation: fadeIn 0.25s ease-in-out;
+  max-height: 90vh; 
+  overflow-y: auto; /* scroll inside modal */
+}
+
+/* Smooth animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Form fields inside modal */
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* Buttons row */
+.modal-content .modal-buttons,
+.modal-content div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Button styles */
+.modal-content button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal-content button:first-child {
+  background: var(--primary-color);
+  color: white;
+}
+
+.modal-content button:last-child {
+  background: #777;
+  color: white;
+}
+
+.modal-content button:hover {
+  opacity: 0.85;
+}
+
+/* Mobile Fix */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    max-height: 85vh;
+  }
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.btn-danger {
+  background: #e63946 !important;
+  color: white !important;
+}
+
+.btn-danger:hover {
+  background: #c62828 !important;
+}
+
+/* -----------------------------
+   ADMIN – VIEW ALL BOOKINGS
+------------------------------ */
+
+.admin-section {
+  padding: 2rem 0;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.page-subtitle {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+}
+
+.booking-card {
+  background: var(--card-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: transform .2s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+}
+
+.booking-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: .5rem;
+}
+
+.booking-card p {
+  margin: 0.3rem 0;
+}
+
+/* Admin cancel button */
+.btn-cancel-admin {
+  margin-top: 1rem;
+  padding: .6rem 1.1rem;
+  background: #c62828;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.btn-cancel-admin:hover {
+  background: #a01616;
+}
+
+/* -----------------------------
+   ERROR PAGE
+------------------------------ */
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 1rem;
+}
+
+.error-box {
+  background: var(--card-color);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.error-box h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.error-box p {
+  opacity: .8;
+  margin-bottom: 1.5rem;
+}
+/* -----------------------------
+   CONFIRMATION PAGE
+------------------------------ */
+.confirmation {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 1rem;
+}
+
+.confirm-box {
+  background: var(--card-color);
+  padding: 3rem 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  text-align: center;
+  max-width: 550px;
+}
+
+.confirm-box h1 {
+  margin-bottom: 0.7rem;
+}
+
+.confirm-box p {
+  opacity: 0.8;
+  margin-bottom: 1.2rem;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: .7rem 1.2rem;
+  background: var(--secondary-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* -----------------------------
+   FOOTER REDESIGN
+------------------------------ */
+.footer {
+  background: var(--secondary-color);
+  padding: 3rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-col a {
+  display: block;
+  margin: 0.3rem 0;
+  color: var(--text-color);
+  text-decoration: none;
+  opacity: .8;
+}
+
+.footer-col a:hover {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  opacity: .6;
+}
+
+a, a:visited {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.dark-mode a, .dark-mode a:visited {
+  color: #fff;
+}
+
+a:hover {
+  color: var(--primary-color);
+}

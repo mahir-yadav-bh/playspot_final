@@ -1,0 +1,49 @@
+<div class="container">
+
+  <h1 class="page-title">Admin Dashboard</h1>
+
+  <!-- ADMIN INFO (Loaded by dashboard.js) -->
+  <section class="card admin-info-card">
+    <h2>Welcome, <span id="userName"></span> 👋</h2>
+    <p>Email: <span id="userEmail"></span></p>
+    <p>Role: <span id="userRole"></span></p>
+  </section>
+
+  <!-- QUICK ACTIONS SECTION -->
+  <h2 class="section-title">Admin Controls</h2>
+
+  <div class="grid-3">
+    
+    <a href="/add-venue" class="card admin-card">
+      <h3>➕ Add Venue</h3>
+      <p>Create and publish a new sports venue.</p>
+    </a>
+
+    <a href="/manageVenues" class="card admin-card">
+      <h3>🛠 Manage Venues</h3>
+      <p>Edit or remove existing venue listings.</p>
+    </a>
+
+    <a href="/adminBookings" class="card admin-card">
+      <h3>📘 View All Bookings</h3>
+      <p>Track user bookings and manage cancellations.</p>
+    </a>
+
+  </div>
+
+  <!-- STATS -->
+  <!-- STATS (LIVE DYNAMIC) -->
+    <h2 class="section-title">Platform Overview</h2>
+        <div class="grid-3">
+        <div class="card stat-card">
+            <h3 id="statVenues">0</h3>
+            <p>Total Venues</p>
+        </div>
+        <div class="card stat-card">
+            <h3 id="statBookings">0</h3>
+            <p>Total Bookings</p>
+        </div>
+    </div>
+</div>
+
+<script src="/js/dashboard.js"></script>
